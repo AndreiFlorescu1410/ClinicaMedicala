@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "nume": "Dr. Miruna NICOLAE",
+      "parola": "J$Qg7n%#8",
+      "email": "mirunanicolae@clinicamedicala.ro",
+      "url": "poze/medic4.jpg",
+      "titlu": "Medic Specialist Reumatolog",
+      "id": 2
+    },
+    {
+      "nume": "Dr. Andrei FILIP",
+      "parola": "J$Qg7n%#8",
+      "email": "andreifilip@clinicamedicala.ro",
+      "url": "poze/medic2.jpg",
+      "titlu": "Medic Specialist Reumatolog",
+      "id": 3
+    },
+    {
+      "nume": "Dr. TRIANTAFYLLIDIS",
+      "parola": "J$Qg7n%#8",
+      "email": "GTRIANTAFYLLIDIS@clinicamedicala.ro",
+      "url": "poze/medic3.jpg",
+      "titlu": "Medic Primar în Radiologie si Imagistica Medicala",
+      "id": 4
+    },
+    {
+      "nume": "Dr. Tanase ADRIANA",
+      "parola": "J$Qg7n%#8",
+      "email": "tanaseadriana@clinicamedicala.ro",
+      "url": "poze/medic5.jpg",
+      "titlu": "Medic Specialist Reumatolog",
+      "id": 5
+    },
+    {
+      "nume": "Dr. Cristina TIMARU",
+      "parola": "J$Qg7n%#8",
+      "email": "cristinatimaru@clinicamedicala.ro",
+      "url": "poze/medic6.jpg",
+      "titlu": "Medic Primar în Radiologie si Imagistica Medicala",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <link type="text/CSS" rel="stylesheet" href="desprenoi.css" />
+    <title>Despre Noi - Clinica Medicala</title>
+    <link rel="shortcut icon" type="image/jpg" href="poze/favicon.ico" />
+</head>
+
+<body onload="fonload()">
+    <ul class="navbar">
+        <li><a href="index.html">Acasa</a></li>
+        <li>
+            <div class="dropdown">
+                <a>Servicii Medicale▼</a>
+                <div class="dropdown-content">
+                    <a href="cardiologie.html">Cardiologie</a>
+                    <a href="ecografii.html">Ecografii</a>
+                    <a href="reumatologie.html">Reumatologie</a>
+                </div>
+            </div>
+        </li>
+
+        <li><a href="desprenoi.html">Despre Noi</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" onclick="document.getElementById('id03').style.display='block'">Setari</a></li>
+        <li><a href="#" onclick="clicklogare()" id="loginnav">Login</a></li>
+    </ul>
+
+    <div class="divspatiu">
+    </div>
+    <div class="container">
+        <img src="poze/desprenoi1.jpg" alt="Despre noi" />
+        <div class="overlay">
+            <img src="poze/desprenoi2.jpg" alt="Despre noi" />
+        </div>
+    </div>
+
+    <h1>Despre Noi</h1>
+    <p>&emsp;Calificarea si dedicarea medicilor nostri este un model de referinta pentru intreaga echipa. Personalul clinicii noastre, a fost ales pentru profesionalism si angajamentul lor de a oferi servicii medicale de inalta calitate, pacientilor nostri. Echipa noastra de medici efectueaza peste 25000 de consultații pe an. Totodata, in Clinica Medicala se efectueaza peste 3000 de interventii chirurgicale in fiecare an. Medicii nostri participa in fiecare an la cele mai importante congrese, cursuri de specializare si schimburi de experienta, atat in tara cat si peste hotare.
+    </p>
+    <p>
+        <button type="button" class="cancelbtn" id="stergemedici">Sterge un medic</button>
+    </p>
+    <h2>O parte din medicii Clinica Medicala:</h2>
+    <div class="medici">
+
+    </div>
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" onsubmit="check()">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="poze/login_avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Introdu Mail-ul" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Intodu Parola" name="psw" required>
+
+                <button>Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <span class="psw">Adauga un <a href="#" onclick="newaccount();">medic nou</a>!</span>
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+                <span class="psw">Ai uitat <a href="#" onclick="forgotpassword()";>parola</a>?</span>
+            </div>
+        </form>
+    </div>
+
+    <div id="id02" class="modal">
+        <form class="modal-content" onsubmit="store()">
+            <div class="container ">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Adauga un medic nou!</h2>
+                <p>Completeaza formularul pentru a adauga un medic nou.</p>
+                <hr>
+                <label for="email"><b>Nume Prenume</b></label>
+                <input type="text" placeholder="Introdu Numele si Prenumule" name="runame" required>
+
+                <label for="psw"><b>Parola</b></label>
+                <input type="password" placeholder="Introdu Parola" name="rpsw" id="rspw" required>
+
+                <label for="psw-repeat"><b>Repeta Parola</b></label>
+                <input type="password" placeholder="Repeta Parola" name="rpsw-repeat" id="rspwr" required>
+                <br>
+                <p id="raspuns"></p>
+
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Email" id="remail" required>
+                <br>
+                <p id="raspuns"></p>
+
+                <label><b>Sursa Imaginii</b></label>
+                <input type="text" placeholder="Sursa imaginii" id="rsrc" required>
+                <br>
+                <p id="raspuns"></p>
+                <label for="gender"><b>Sex</b></label>
+                <br>
+                <input type="radio" placeholder="Sex" name="gender" required> Feminin
+                <input type="radio" placeholder="Sex" name="gender" name="gender" required> Masculin
+                <br>
+                <br>
+
+                <label for="oras"><b>Specialitate</b></label>
+                <br>
+                <select id="titlu" placeholder="Oras de resedinta" required>
+                    <option value="Medic Primar în Radiologie şi Imagistică Medicală">Medic Primar în Radiologie şi Imagistică Medicală</option>
+                    <option value="Medic Specialist Reumatolog">Medic Specialist Reumatolog</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="Varsta"><b>Varsta</b></label>
+                <br>
+                <input type="range" id="rangeInput" name="Varsta" min="0" max="100" oninput="amount.value=rangeInput.value + ' (de) ani' " value="0">
+                <output id="amount" name="amount" for="rangeInput">0 ani</output>
+                <br>
+                <br>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1" style="background-color:red">Cancel</button>
+                    <button class="signupbtn" id="sub">Adauga!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="id03" class="modal" onsubmit="setari()">
+
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="poze/settings-icon.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container1">
+                <label><b>Font-Size</b></label>
+                <input type="range" id="fontInput" min="0" max="40" oninput="amount.value=fontInput.value + ' px' " value="16">
+                <output id="amount" name="amount" for="rangeInput">0 px</output>
+                <br>
+                <br>
+                <label><b>Culoarea Background-ului</b></label>
+                <input type="color" id="colorInput" value="#ffffff">
+                <br>
+                <br>
+
+                <button type="submit">Aplica!</button>
+                <button type="button" onclick="random_bg_color()">Culoare aleatoare!</button>
+                <button type="button" class="cancelbtn" onclick="stop_bg_color()">Opreste schimbarea culorii!</button>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div id="id04" class="modal" onsubmit="schimba()">
+
+        <form class="modal-content" onsubmit="schimba()">
+            <div class="container ">
+                <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Ai uitat parola?</h2>
+                <p>Completeaza formularul pentru a reseta parola!</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Introdu Email-ul" id="schimbamail" required>
+
+                <label for="psw"><b>Noua Parola</b></label>
+                <input type="password" placeholder="Introdu Noua Parola" id="schimbaparola" required>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn1" style="background-color:red">Cancel</button>
+                    <button class="signupbtn" id="sub">Reseteaza Parola</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="id05" class="modal">
+
+        <form class="modal-content" onsubmit="stergemedic()">
+            <div class="container ">
+                <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Sterge un medic</h2>
+                <p>Completeaza formularul pentru a sterge un medic!</p>
+                <hr>
+                <label><b>Nr. Medic</b></label>
+                <input type="text" placeholder="Introdu Nr-ul Medicului" id="nrmedic" required>
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn1" style="background-color:red">Cancel</button>
+                    <button class="signupbtn" id="sub">Sterge Medic</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="id06" class="modal">
+        <form class="modal-content">
+            <div class="container ">
+                <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <h2>Bun Venit!</h2>
+                <hr>
+                <button type="button" class="cancelbtn" id="sterge">Sterge datele de logare</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="desprenoi.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>
